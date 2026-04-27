@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Hillary Ojiambo | Portfolio</title>
+  <!-- Google Fonts for modern typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Contact Form Styles -->
+  
+  <link rel="stylesheet" href="./contactForm.css"> 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #000000;   /* black base */
+      color: #FFFFFF;              /* white text */
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* custom gold accent */
+    .gold {
+      color: #D4AF37;
+    }
+    .gold-bg {
+      background-color: #D4AF37;
+      color: #000000;
+    }
+    .border-gold {
+      border-color: #D4AF37;
+    }
+    hr.gold-hr {
+      border: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #D4AF37, #D4AF37 40%, transparent);
+      margin: 1rem 0;
+    }
+
+    /* container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header/nav */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+      flex-wrap: wrap;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .logo span {
+      color: #D4AF37;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: #D4AF37;
+    }
+    /* mobile */
+    @media (max-width: 700px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav-links {
+        gap: 1.5rem;
+      }
+      .container {
+        padding: 0 1.5rem;
+      }
+    }
+
+    /* hero section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3rem 0 2rem;
+      gap: 2rem;
+    }
+    .hero-content {
+      flex: 1;
+    }
+    .hero-badge {
+      color: #D4AF37;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .hero-content h1 .gold {
+      border-bottom: 3px solid #D4AF37;
+      display: inline-block;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #e0e0e0;
+      margin-bottom: 1.5rem;
+      max-width: 550px;
+    }
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background-color: #D4AF37;
+      color: #000000;
+    }
+    .btn-primary:hover {
+      background-color: #c2a131;
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      border-color: #D4AF37;
+      color: #D4AF37;
+    }
+    .btn-outline:hover {
+      background-color: rgba(212, 175, 55, 0.1);
+      transform: translateY(-2px);
+    }
+    .hero-avatar {
+      flex: 0.8;
+      text-align: center;
+    }
+    .avatar-circle {
+      width: 220px;
+      height: 220px;
+      background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      border: 3px solid #D4AF37;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .avatar-circle i {
+      font-size: 6rem;
+      color: #D4AF37;
+    }
+    /* section styling */
+    section {
+      padding: 4rem 0;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: #D4AF37;
+    }
+    .section-sub {
+      margin: 1.8rem 0 2rem;
+      color: #bbb;
+    }
+
+    /* education cards */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin-top: 1rem;
+    }
+    .edu-card {
+      background-color: #111111;
+      border-left: 4px solid #D4AF37;
+      padding: 1.5rem;
+      border-radius: 16px;
+      transition: transform 0.2s;
+    }
+    .edu-card:hover {
+      transform: translateY(-5px);
+      background-color: #161616;
+    }
+    .edu-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .edu-date {
+      color: #D4AF37;
+      font-weight: 500;
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.3px;
+    }
+    .edu-desc {
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    /* experience */
+    .exp-item {
+      background: #0c0c0c;
+      border-radius: 20px;
+      padding: 1.8rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .exp-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .exp-company {
+      color: #D4AF37;
+      font-weight: 500;
+    }
+    .exp-date {
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+    .exp-desc {
+      margin-top: 1rem;
+      padding-left: 1rem;
+      border-left: 2px solid #D4AF37;
+    }
+    .exp-desc ul {
+      list-style: none;
+    }
+    .exp-desc li {
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.8rem;
+    }
+    .exp-desc li i {
+      color: #D4AF37;
+      font-size: 0.9rem;
+      width: 20px;
+    }
+
+    /* skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .skill-cat {
+      background: #0a0a0a;
+      padding: 1.2rem;
+      border-radius: 20px;
+      border: 1px solid #222;
+    }
+    .skill-cat h4 {
+      color: #D4AF37;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      border-left: 3px solid #D4AF37;
+      padding-left: 0.7rem;
+    }
+    .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .skill-tag {
+      background: #1e1e1e;
+      padding: 0.3rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #ddd;
+      transition: 0.2s;
+    }
+    .skill-tag:hover {
+      background: #D4AF37;
+      color: #000;
+    }
+
+    /* languages & referees */
+    .info-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+      margin-top: 1rem;
+    }
+    .lang-box, .ref-box {
+      background: #0c0c0c;
+      padding: 1.5rem;
+      border-radius: 24px;
+      flex: 1;
+      min-width: 200px;
+    }
+    .lang-box h3, .ref-box h3 {
+      color: #D4AF37;
+      margin-bottom: 1rem;
+    }
+    .referee {
+      margin-bottom: 1rem;
+    }
+    .referee p {
+      margin-bottom: 0.2rem;
+    }
+    .ref-phone {
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    /* responsiveness */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .btn-group {
+        justify-content: center;
+      }
+      .section-title:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .section-title {
+        display: block;
+        text-align: center;
+      }
+      .exp-header {
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+    }
+    /* projects grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    .project-card {
+      background: #0a0a0a;
+      padding: 2rem;
+      border-radius: 20px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+      border-color: rgba(212, 175, 55, 0.4);
+    }
+    .project-icon {
+      font-size: 2.8rem;
+      color: #D4AF37;
+      margin-bottom: 1rem;
+    }
+    .project-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: #FFFFFF;
+    }
+    .project-status {
+      color: #D4AF37;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.3px;
+    }
+    .project-desc {
+      color: #ccc;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+    .tech-badge {
+      background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #D4AF37;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .tech-badge:hover {
+      background: rgba(212, 175, 55, 0.1);
+      border-color: #D4AF37;
+    }
+    .insight-note {
+      background: rgba(212, 175, 55, 0.05);
+      border-left: 3px solid #D4AF37;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: #bbb;
+      margin-top: 1rem;
+    }
+    
+    a {
+      color: inherit;
+    }
+    .highlight {
+      color: #D4AF37;
+    }
+    .avatar-circle {
+  width: 400px; /* Adjust size as needed */
+  height: 400px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(black); /* Stylish gradient */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.name-logo {
+  color: gold;
+  font-family: 'Inter', sans-serif; /* Or any modern sans-serif */
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Navigation -->
+    <nav class="navbar">
+      
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home">
+      <div class="hero">
+        <div class="hero-content">
+          <div class="hero-badge"><i class="fas fa-code"></i> Software Developer | Graphics Developer </div>
+          <h1>Crafting Soft Systems <span class="gold">experiences</span><br>with code & creativity.</h1>
+          <p> Web and mobile app developer with hands-on experience building crossplatform applications.Strong problem-solving skills and a solid foundation in game development and graphics developement. 
+            Focused on creating efficient, scalable and impactful solutions</p>
+          <div class="btn-group">
+            <a href="#experience" class="btn btn-primary">View Work</a>
+            <a href="#contact" class="btn btn-outline">Get in touch <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="hero-avatar">
+  <div class="avatar-circle">
+    <span class="name-logo">HILLARY <br> OJIAMBO</span>
+  </div>
+</div>
+      </div>
+    </section>
+    <section id="research">
+    <h2 class="section-title">Research Projects</h2>
+    <hr class="gold-hr">
+    <p style="margin-bottom: 1rem; color: #bbb; max-width: 800px;">Applied research bridging IoT, AI, and sustainability — currently piloting innovative solutions with Mount Kenya University and industry partners.</p>
+    
+    <div class="projects-grid">
+      <!-- IntelliGas Card (Arduino added) -->
+      <div class="project-card">
+        <div class="project-icon"><i class="fas fa-fire-extinguisher"></i></div>
+        <h3>IntelliGas <span style="font-size: 0.9rem;">🔬</span></h3>
+        <div class="project-status"><i class="fas fa-rocket"></i> PILOTING STAGE • MKU Innovation Club</div>
+        <p class="project-desc"><strong>LPG gas level monitoring & predictive system</strong> – real-time gas level tracking for households and supplier insights. Improves safety, prevents sudden runouts, and enables data-driven LPG logistics.</p>
+        <div class="tech-stack">
+          <span class="tech-badge"><i class="fab fa-microsoft"></i> .NET MAUI</span>
+          <span class="tech-badge"><i class="fas fa-code"></i> C#</span>
+          <span class="tech-badge"><i class="fas fa-microchip"></i> Arduino</span>
+          <span class="tech-badge"><i class="fas fa-database"></i> Firebase</span>
+          <span class="tech-badge"><i class="fab fa-html5"></i> HTML/CSS/JS</span>
+          <span class="tech-badge"><i class="fas fa-microchip"></i> C (Embedded)</span>
+          <span class="tech-badge"><i class="fab fa-node-js"></i> Node.js</span>
+        </div>
+        <div class="insight-note">
+          <i class="fas fa-chalkboard-teacher gold"></i> <strong>Research scope:</strong> Sensor fusion (Arduino + gas level sensors) → Edge data → Firebase sync. Supplier dashboard & customer mobile app. Currently piloting with MKU households & local LPG vendors.
+        </div>
+        <p class="project-desc" style="margin-top: 0.8rem;"><i class="fas fa-check-circle gold"></i> <strong>Arduino-based prototype</strong> uses load cells / ultrasonic & pressure sensors — transmits data via ESP8266. Piloting stage shows 96% accuracy in real-time level prediction.</p>
+      </div>
+
+      <!-- MarkBent AI Card -->
+      <div class="project-card">
+        <div class="project-icon"><i class="fas fa-brain"></i></div>
+        <h3>MarkBent AI <span style="font-size: 0.9rem;">📊</span></h3>
+        <div class="project-status"><i class="fas fa-graduation-cap"></i> AI Exam Assistant • Research Phase</div>
+        <p class="project-desc"><strong>AI-powered web platform that empowers teachers to generate exams, marking schemes & performance reports.</strong> Automates question generation (Bloom's taxonomy), offers analytics dashboards and formative insights.</p>
+        <div class="tech-stack">
+          <span class="tech-badge"><i class="fab fa-html5"></i> HTML/CSS</span>
+          <span class="tech-badge"><i class="fab fa-js"></i> JavaScript</span>
+          <span class="tech-badge"><i class="fab fa-node-js"></i> Node.js</span>
+          <span class="tech-badge"><i class="fas fa-database"></i> Firebase</span>
+          <span class="tech-badge"><i class="fas fa-chart-line"></i> AI Reports</span>
+        </div>
+        <div class="insight-note">
+          <i class="fas fa-chart-pie gold"></i> <strong>Research outcomes:</strong> Reduces exam prep time by ~70% — generates 5+ report types: class performance heatmaps, topic-wise mastery, question difficulty analysis, and individual student feedback.
+        </div>
+        <p class="project-desc" style="margin-top: 0.8rem;"><i class="fas fa-robot gold"></i> Integrates with Firebase Auth and Firestore. Teachers can customize subjects, grade levels, and export reports in PDF/CSV. Beta testing in Nairobi schools ongoing.</p>
+      </div>
+    </div>
+
+    <!-- Additional research highlight bar -->
+    <div style="margin-top: 2rem; background: linear-gradient(135deg, #0a0a0a, #000000); border-radius: 28px; padding: 1.2rem 1.8rem; border: 1px solid rgba(212, 175, 55, 0.4);">
+      <div style="display: flex; gap: 1.2rem; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+        <div><i class="fas fa-flask gold" style="font-size: 1.8rem;"></i></div>
+        <div style="flex:1"><strong style="color:#D4AF37;">IntelliGas</strong> — under MKU Innovations Club <span style="color:#aaa;">|</span> <strong style="color:#D4AF37;">MarkBent AI</strong> — AI for education research collaboration</div>
+        <div><span class="gold"><i class="fas fa-microphone-alt"></i> Seeking industry partners & testbeds</span></div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  
+    <section id="experience">
+      <h2 class="section-title">Work Experience</h2>
+      <hr class="gold-hr">
+      
+      <!-- Innovation Hub MKU -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-title">Software Developer</span>
+            <span class="exp-company"> @ Innovation Hub MKU</span>
+          </div>
+          <div class="exp-date">2025 – Present</div>
+        </div>
+        <div class="exp-desc">
+          <ul>
+            <li><i class="fas fa-check-circle"></i> Developing investor-ready applications and prototypes showcased at GDC MKU and industry events with focus on scalability and commercial viability.</li>
+            <li><i class="fas fa-check-circle"></i> Full-stack development across <strong>Web Development</strong> (HTML/CSS/JavaScript, Firebase backends), <strong>Android Development</strong> (.NET MAUI, native Android), and <strong>Embedded Systems</strong> (Arduino, C embedded, IoT).</li>
+            <li><i class="fas fa-check-circle"></i> Leading cross-disciplinary teams in ideation, prototyping, and MVP development for AI-driven and IoT-enabled solutions targeting market adoption.</li>
+            <li><i class="fas fa-check-circle"></i> Spearheading innovation initiatives including smart hardware integration, real-time data pipelines, and enterprise dashboard development.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Industrial Attachment -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-title">Frontend Developer Intern</span>
+            <span class="exp-company"> @ Swahiliopt Hub</span>
+          </div>
+          <div class="exp-date">May 2022 – August 2022</div>
+        </div>
+        <div class="exp-desc">
+          <ul>
+            <li><i class="fas fa-check-circle"></i> Developed and maintained <strong class="gold">5+ responsive websites</strong> using vanilla JavaScript, HTML5, CSS3 — improved user engagement by <strong>30%</strong></li>
+            <li><i class="fas fa-check-circle"></i> Collaborated with cross-functional teams to deliver community-focused web solutions aligned with accessibility & mobile-first design.</li>
+            <li><i class="fas fa-check-circle"></i> Applied UI/UX best practices to enhance usability & cross-browser compatibility (Chrome, Firefox, Safari).</li>
+            <li><i class="fas fa-check-circle"></i> Participated in code reviews & technical workshops, boosting code quality & workflows.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Internship -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-title">Software Engineering Intern</span>
+            <span class="exp-company"> @ Swahiliopt Hub</span>
+          </div>
+          <div class="exp-date">Sept 2022 – Dec 2023</div>
+        </div>
+        <div class="exp-desc">
+          <ul>
+            <li><i class="fas fa-check-circle"></i> Localized open-source web browsers (e.g., Tor) for Swahili-speaking communities, enhancing digital access in low-bandwidth environments.</li>
+            <li><i class="fas fa-check-circle"></i> Participated in agile sprints, peer code reviews, and community workshops to align with sustainability goals.</li>
+            <li><i class="fas fa-check-circle"></i> Annotated <strong>1,000+ images & geospatial datasets</strong> for AI model training, enabling community-driven data labeling.</li>
+            <li><i class="fas fa-check-circle"></i> Collaborated on <strong>UN-Habitat SDG project</strong> for infrastructure mapping of Mombasa City, using open-source tools to support urban development.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section (detailed) -->
+    <section id="skills">
+      <h2 class="section-title">Technical Arsenal</h2>
+      <hr class="gold-hr">
+      <div class="skills-grid">
+        <div class="skill-cat">
+          <h4><i class="fas fa-code"></i> Frontend</h4>
+          <div class="skill-items">
+            <span class="skill-tag">JavaScript (ES6+)</span>
+            <span class="skill-tag">HTML5/CSS3</span>
+            <span class="skill-tag">Responsive Design</span>
+            <span class="skill-tag">Accessibility</span>
+            <span class="skill-tag">Cross-browser Compat.</span>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <h4><i class="fas fa-mobile-alt"></i> Mobile & Cross-Platform</h4>
+          <div class="skill-items">
+            <span class="skill-tag">.NET MAUI</span>
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">Android Dev</span>
+            <span class="skill-tag">UI/UX Optimization</span>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <h4><i class="fas fa-cloud"></i> Backend & Cloud</h4>
+          <div class="skill-items">
+            <span class="skill-tag">Firebase (Auth, FS, Storage)</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Node.js Express</span>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <h4><i class="fas fa-robot"></i> AI & Automation</h4>
+          <div class="skill-items">
+            <span class="skill-tag">Prompt Engineering</span>
+            <span class="skill-tag">Data Annotation</span>
+            <span class="skill-tag">Semantic Tagging</span>
+            <span class="skill-tag">AI-assisted Workflows</span>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <h4><i class="fas fa-code-branch"></i> DevOps & Tools</h4>
+          <div class="skill-items">
+            <span class="skill-tag">Git/GitHub</span>
+            <span class="skill-tag">Agile Sprints</span>
+            <span class="skill-tag">Code Reviews</span>
+            <span class="skill-tag">IT Support</span>
+          </div>
+        </div>
+        <div class="skill-cat">
+          <h4><i class="fas fa-users"></i> Soft Skills</h4>
+          <div class="skill-items">
+            <span class="skill-tag">Team Collaboration</span>
+            <span class="skill-tag">Problem-solving</span>
+            <span class="skill-tag">Community Engagement</span>
+            <span class="skill-tag">Adaptability</span>
+          </div>
+        </div>
+         <div class="skill-cat">
+        <h4><i class="fas fa-robot"></i> IoT & Hardware</h4>
+        <div class="skill-items">
+          <span class="skill-tag">Arduino</span>
+          <span class="skill-tag">C Embedded</span>
+          
+          <span class="skill-tag">Firebase</span>
+        </div>
+      </div>
+    </section>
+     <!-- Education Section -->
+    <section id="education">
+      <h2 class="section-title">Education & Certifications</h2>
+      <hr class="gold-hr">
+      <div class="edu-grid">
+        <div class="edu-card">
+          <h3>Bachelor of Science in IT</h3>
+          <div class="edu-date">Mount Kenya University | 2025 – 2027</div>
+          <div class="edu-desc">Focused on software engineering, database systems, and modern web frameworks. Leadership in tech projects.</div>
+        </div>
+        <div class="edu-card">
+          <h3>Diploma in ICT</h3>
+          <div class="edu-date">Technical University of Mombasa | 2019 – 2023</div>
+          <div class="edu-desc">Comprehensive training in networks, hardware, programming fundamentals, and system analysis.</div>
+        </div>
+        <div class="edu-card">
+          <h3>Fundamentals of Game Development</h3>
+          <div class="edu-date">Xamk University of Applied Sciences | 11 ECTS</div>
+          <div class="edu-desc">Game design patterns, C++ basics, Unity fundamentals, interactive storytelling.</div>
+        </div>
+        <div class="edu-card">
+          <h3>IoT and Robotics</h3>
+          <div class="edu-date">Mamuza Engineering </div>
+          <div class="edu-desc">Arduino , Sensor Integration, C embedded basics, internet of things, Robotics and Automation,Embedded Systems.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Languages & Referees -->
+    <section id="contact">
+      <h2 class="section-title">Languages & References</h2>
+      <hr class="gold-hr">
+      <div class="info-row">
+        <div class="lang-box">
+          <h3><i class="fas fa-language"></i> Languages</h3>
+          <p><span class="gold">●</span> English (Professional fluency)</p>
+          <p><span class="gold">●</span> Kiswahili (Native)</p>
+        </div>
+        <div class="ref-box">
+          <h3><i class="fas fa-user-tie"></i> Referees</h3>
+          <div class="referee">
+            <p><strong>Rajab Salim</strong> – Supervisor</p>
+            <p class="ref-phone"><i class="fas fa-phone-alt"></i> +254 715 308 527</p>
+          </div>
+          <div class="referee">
+            <p><strong>Chris Achinga</strong> – Supervisor, IT Department</p>
+            <p class="ref-phone"><i class="fas fa-phone-alt"></i> +254 740 428 522</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <div style="margin: 2rem 0 2rem 0; background: linear-gradient(135deg, #0a0a0a, #000000); border-radius: 40px; padding: 2.5rem; border: 1px solid rgba(212, 175, 55, 0.3);">
+      <h3 style="color: #D4AF37; margin-bottom: 0.5rem; font-size: 1.8rem;"><i class="fas fa-paper-plane"></i> Get in Touch</h3>
+      <p style="margin-bottom: 1.5rem; color: #bbb;">Have a project idea or want to collaborate? Send me a message and I'll get back to you as soon as possible.</p>
+      
+      <form id="contactForm" method="POST" style="display: flex; flex-direction: column; gap: 1rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <input 
+            type="text" 
+            name="name" 
+            placeholder="Your Name" 
+            required
+            style="background: #1a1a1a; border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 0.8rem; color: #fff; font-family: inherit; transition: all 0.2s;"
+            onmouseover="this.style.borderColor='#D4AF37'"
+            onmouseout="this.style.borderColor='rgba(212, 175, 55, 0.3)'"
+            onfocus="this.style.borderColor='#D4AF37'; this.style.boxShadow='0 0 10px rgba(212, 175, 55, 0.3)'"
+            onblur="this.style.boxShadow='none'"
+          />
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Your Email" 
+            required
+            style="background: #1a1a1a; border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 0.8rem; color: #fff; font-family: inherit; transition: all 0.2s;"
+            onmouseover="this.style.borderColor='#D4AF37'"
+            onmouseout="this.style.borderColor='rgba(212, 175, 55, 0.3)'"
+            onfocus="this.style.borderColor='#D4AF37'; this.style.boxShadow='0 0 10px rgba(212, 175, 55, 0.3)'"
+            onblur="this.style.boxShadow='none'"
+          />
+        </div>
+        
+        <input 
+          type="text" 
+          name="subject" 
+          placeholder="Subject" 
+          required
+          style="background: #1a1a1a; border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 0.8rem; color: #fff; font-family: inherit; transition: all 0.2s;"
+          onmouseover="this.style.borderColor='#D4AF37'"
+          onmouseout="this.style.borderColor='rgba(212, 175, 55, 0.3)'"
+          onfocus="this.style.borderColor='#D4AF37'; this.style.boxShadow='0 0 10px rgba(212, 175, 55, 0.3)'"
+          onblur="this.style.boxShadow='none'"
+        />
+        
+        <textarea 
+          name="message" 
+          placeholder="Your Message" 
+          rows="5" 
+          required
+          style="background: #1a1a1a; border: 1px solid rgba(212, 175, 55, 0.3); border-radius: 12px; padding: 0.8rem; color: #fff; font-family: inherit; resize: vertical; transition: all 0.2s;"
+          onmouseover="this.style.borderColor='#D4AF37'"
+          onmouseout="this.style.borderColor='rgba(212, 175, 55, 0.3)'"
+          onfocus="this.style.borderColor='#D4AF37'; this.style.boxShadow='0 0 10px rgba(212, 175, 55, 0.3)'"
+          onblur="this.style.boxShadow='none'"
+        ></textarea>
+        
+        <button 
+          type="submit" 
+          style="background: #D4AF37; color: #000; border: none; border-radius: 30px; padding: 1rem 2rem; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.2s; align-self: flex-start;"
+          onmouseover="this.style.background='#c2a131'; this.style.transform='translateY(-2px)'"
+          onmouseout="this.style.background='#D4AF37'; this.style.transform='translateY(0)'"
+        >
+          <i class="fas fa-send"></i> Send Message
+        </button>
+      </form>
+      
+      <p style="margin-top: 1.5rem; color: #aaa; font-size: 0.9rem;"><i class="fas fa-check-circle gold"></i> I typically respond within 24-48 hours.</p>
+    </div>
+
+    <footer>
+      <p>© 2025 Hillary Ojiambo .</p>
+      
+    </footer>
+  </div>
+
+  <!-- optional smooth highlight on load -->
+  <!-- Contact Form Handler -->
+  
+  <script>
+    // smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === "#" || href === "") return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+    // tiny dynamic year
+    const yearSpan = document.querySelector('footer p:first-child');
+    if(yearSpan) {
+      const currentYear = new Date().getFullYear();
+      yearSpan.innerHTML = `© ${currentYear} @Hillary Ojiambo.`;
+    }
+  </script>
+  <script>
+   // contactForm.js
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const submitBtn = e.target.querySelector('button');
+    const originalText = submitBtn.innerHTML;
+    
+    // UI Feedback: Loading state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+    const formData = {
+        name: e.target.name.value,
+        email: e.target.email.value,
+        subject: e.target.subject.value,
+        message: e.target.message.value,
+        timestamp: new Date().toISOString()
+    };
+
+    try {
+        // REPLACE with your actual Render URL (e.g., https://your-app.onrender.com/send-message)
+        const response = await fetch('https://potfolio-rshy.onrender.com/send-message  ', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (response.ok) {
+            alert('Message sent successfully!');
+            e.target.reset();
+        } else {
+            throw new Error('Server responded with an error.');
+        }
+    } catch (error) {
+        console.error('Submission Error:', error);
+        alert('Failed to send message. Please try again later.');
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+    }
+}); 
+  </script>
+</body>
+</html>
