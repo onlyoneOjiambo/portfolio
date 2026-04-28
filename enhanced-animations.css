@@ -1,0 +1,281 @@
+/* Enhanced 3D and Interactive Animations */
+
+/* Scroll animations for cards */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Enhanced project card animations */
+.project-card {
+  animation: slideInUp 0.6s ease-out both;
+  perspective: 1000px;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.project-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.project-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.project-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.project-card:hover {
+  animation: glow 2s ease-in-out;
+  transform: translateY(-8px) perspective(1000px) rotateX(5deg);
+}
+
+/* Enhanced education cards */
+.edu-card {
+  animation: slideInLeft 0.5s ease-out both;
+}
+
+.edu-card:nth-child(odd) {
+  animation-name: slideInLeft;
+}
+
+.edu-card:nth-child(even) {
+  animation-name: slideInRight;
+}
+
+.edu-card:nth-child(1) { animation-delay: 0.1s; }
+.edu-card:nth-child(2) { animation-delay: 0.2s; }
+.edu-card:nth-child(3) { animation-delay: 0.3s; }
+.edu-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Experience items animation */
+.exp-item {
+  animation: slideInUp 0.6s ease-out both;
+}
+
+.exp-item:nth-child(1) { animation-delay: 0.1s; }
+.exp-item:nth-child(2) { animation-delay: 0.2s; }
+.exp-item:nth-child(3) { animation-delay: 0.3s; }
+
+/* Skill cards floating animation */
+.skill-cat {
+  animation: float 3s ease-in-out infinite;
+}
+
+.skill-cat:nth-child(1) { animation-delay: 0s; }
+.skill-cat:nth-child(2) { animation-delay: 0.3s; }
+.skill-cat:nth-child(3) { animation-delay: 0.6s; }
+.skill-cat:nth-child(4) { animation-delay: 0.9s; }
+.skill-cat:nth-child(5) { animation-delay: 1.2s; }
+.skill-cat:nth-child(6) { animation-delay: 1.5s; }
+.skill-cat:nth-child(7) { animation-delay: 1.8s; }
+
+/* Skill tags hover glow */
+.skill-tag {
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.skill-tag:hover::before {
+  left: 100%;
+}
+
+/* Section titles animation */
+.section-title {
+  animation: slideInUp 0.5s ease-out both;
+}
+
+section:nth-child(1) .section-title { animation-delay: 0s; }
+section:nth-child(2) .section-title { animation-delay: 0.1s; }
+section:nth-child(3) .section-title { animation-delay: 0.2s; }
+section:nth-child(4) .section-title { animation-delay: 0.3s; }
+section:nth-child(5) .section-title { animation-delay: 0.4s; }
+
+/* Avatar circle glow effect */
+.avatar-circle {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Tech badges with hover lift */
+.tech-badge {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.tech-badge:hover {
+  animation: float 1s ease-in-out;
+  transform: translateY(-5px);
+}
+
+/* Hero content staggered animations */
+.hero-badge {
+  animation: slideInUp 0.5s ease-out 0.1s both;
+}
+
+.hero-content h1 {
+  animation: slideInUp 0.5s ease-out 0.2s both;
+}
+
+.hero-content p {
+  animation: slideInUp 0.5s ease-out 0.3s both;
+}
+
+.btn-group {
+  animation: slideInUp 0.5s ease-out 0.4s both;
+}
+
+.hero-avatar {
+  animation: slideInRight 0.5s ease-out 0.2s both;
+}
+
+/* Navbar animation */
+.navbar {
+  animation: slideInDown 0.5s ease-out both;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Buttons with enhanced hover */
+.btn {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: left 0.3s;
+  z-index: -1;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/* Gold accent animations */
+.gold {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Language and references boxes */
+.lang-box, .ref-box {
+  animation: slideInUp 0.6s ease-out both;
+}
+
+.lang-box {
+  animation-delay: 0.1s;
+}
+
+.ref-box {
+  animation-delay: 0.2s;
+}
+
+/* Contact form elements */
+#contactForm input,
+#contactForm textarea {
+  animation: slideInUp 0.4s ease-out both;
+}
+
+#contactForm input:nth-of-type(1) { animation-delay: 0.1s; }
+#contactForm input:nth-of-type(2) { animation-delay: 0.15s; }
+#contactForm input:nth-of-type(3) { animation-delay: 0.2s; }
+#contactForm textarea { animation-delay: 0.25s; }
+#contactForm button { animation-delay: 0.3s; }
+
+/* Responsive adjustments for animations */
+@media (max-width: 768px) {
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .skill-cat {
+    animation: float 2s ease-in-out infinite;
+  }
+}
+
+/* Intersection observer for scroll-triggered animations */
+.animate-on-scroll {
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out forwards;
+}

@@ -9,8 +9,14 @@
   <!-- Font Awesome 6 (free icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Contact Form Styles -->
+  <link rel="stylesheet" href="./contactForm.css">
   
-  <link rel="stylesheet" href="./contactForm.css"> 
+  <!-- Enhanced Animations -->
+  <link rel="stylesheet" href="./enhanced-animations.css">
+  
+  <!-- Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
   <style>
     * {
       margin: 0;
@@ -97,6 +103,10 @@
     }
 
     /* hero section */
+    #home {
+      position: relative;
+    }
+    
     .hero {
       display: flex;
       flex-wrap: wrap;
@@ -104,6 +114,8 @@
       justify-content: space-between;
       padding: 3rem 0 2rem;
       gap: 2rem;
+      position: relative;
+      z-index: 2;
     }
     .hero-content {
       flex: 1;
@@ -637,7 +649,7 @@
         <div class="exp-desc">
           <ul>
             <li><i class="fas fa-check-circle"></i> Developing investor-ready applications and prototypes showcased at GDC MKU and industry events with focus on scalability and commercial viability.</li>
-            <li><i class="fas fa-check-circle"></i> Full-stack development across <strong>Web Development</strong> (HTML/CSS/JavaScript, Firebase backends),<br> <strong>Android Development</strong> (.NET MAUI, native Android), and <strong>Embedded Systems</strong> (Arduino, C embedded, IoT).</li>
+            <li><i class="fas fa-check-circle"></i><p> Full-stack development across <strong>Web Development</strong> (HTML/CSS/JavaScript, Firebase backends),<br> <strong>Android Development</strong> (.NET MAUI, native Android), and <strong>Embedded Systems</strong> (Arduino, C embedded, IoT).</p></li>
             <li><i class="fas fa-check-circle"></i> Leading cross-disciplinary teams in ideation, prototyping, and MVP development for AI-driven and IoT-enabled solutions targeting market adoption.</li>
             <li><i class="fas fa-check-circle"></i> Spearheading innovation initiatives including smart hardware integration, real-time data pipelines, and enterprise dashboard development.</li>
           </ul>
@@ -677,7 +689,7 @@
             <li><i class="fas fa-check-circle"></i> Localized open-source web browsers (e.g., Tor) for Swahili-speaking communities, enhancing digital access in low-bandwidth environments.</li>
             <li><i class="fas fa-check-circle"></i> Participated in agile sprints, peer code reviews, and community workshops to align with sustainability goals.</li>
             <li><i class="fas fa-check-circle"></i> Annotated <strong>1,000+ images & geospatial datasets</strong> for AI model training, enabling community-driven data labeling.</li>
-            <li><i class="fas fa-check-circle"></i> Collaborated on <strong>UN-Habitat SDG project</strong> for infrastructure mapping of Mombasa City, using open-source tools to support urban development.</li>
+            <li><i class="fas fa-check-circle"></i> <p>Collaborated on <strong>UN-Habitat SDG project</strong> for infrastructure mapping of Mombasa City, using open-source tools to support urban development.</p></li>
           </ul>
         </div>
       </div>
@@ -920,6 +932,12 @@
       yearSpan.innerHTML = `© ${currentYear} @Hillary Ojiambo.`;
     }
   </script>
+  <!-- Three.js Animation Script -->
+  <script src="./three-animations.js"></script>
+  
+  <!-- Advanced Interactive Animations -->
+  <script src="./advanced-interactions.js"></script>
+  
   <script>
    // contactForm.js
 document.getElementById('contactForm').addEventListener('submit', async (e) => {
