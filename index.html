@@ -535,7 +535,11 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
+html,
+body{scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 
+}
 
   </style>
 </head>
@@ -583,7 +587,7 @@
       <div class="project-card">
         <div class="project-icon"><i class="fas fa-fire-extinguisher"></i></div>
         <h3>IntelliGas <span style="font-size: 0.9rem;">🔬</span></h3>
-        <div class="project-status"><i class="fas fa-rocket"></i> PILOTING STAGE • MKU Innovation Club</div>
+        <div class="project-status"><i class="fas fa-rocket"></i> PILOTING STAGE • MKU Innovation Hub</div>
         <p class="project-desc"><strong>LPG gas level monitoring & predictive system</strong> – real-time gas level tracking for households and supplier insights. Improves safety, prevents sudden runouts, and enables data-driven LPG logistics.</p>
         <div class="tech-stack">
           <span class="tech-badge"><i class="fab fa-microsoft"></i> .NET MAUI</span>
@@ -597,15 +601,15 @@
         <div class="insight-note">
           <i class="fas fa-chalkboard-teacher gold"></i> <strong>Research scope:</strong> Sensor fusion (Arduino + gas level sensors) → Edge data → Firebase sync. Supplier dashboard & customer mobile app. Currently piloting with MKU households & local LPG vendors.
         </div>
-        <p class="project-desc" style="margin-top: 0.8rem;"><i class="fas fa-check-circle gold"></i> <strong>Arduino-based prototype</strong> uses load cells / ultrasonic & pressure sensors — transmits data via ESP8266. Piloting stage shows 96% accuracy in real-time level prediction.</p>
+        <p class="project-desc" style="margin-top: 0.8rem;"><i class="fas fa-check-circle gold"></i> <strong>Arduino-based prototype</strong> uses flow sensors — transmits data via ESP8266. Piloting stage shows 96% accuracy in real-time level prediction.</p>
       </div>
 
       <!-- MarkBent AI Card -->
       <div class="project-card">
         <div class="project-icon"><i class="fas fa-brain"></i></div>
-        <h3>MarkBent AI <span style="font-size: 0.9rem;">📊</span></h3>
-        <div class="project-status"><i class="fas fa-graduation-cap"></i> AI Exam Assistant • Research Phase</div>
-        <p class="project-desc"><strong>AI-powered web platform that empowers teachers to generate exams, marking schemes & performance reports.</strong> Automates question generation (Bloom's taxonomy), offers analytics dashboards and formative insights.</p>
+        <h3>MarkBench AI <span style="font-size: 0.9rem;">📊</span></h3>
+        <div class="project-status"><i class="fas fa-graduation-cap"></i> AI Exam Marker Assistant • Research Phase</div>
+        <p class="project-desc"><strong>AI-powered web platform that help teachers to mark exams, using their marking schemes & delivers performance reports.</strong> Reports can be downloaded as pdfs for individual students and whole class .</p>
         <div class="tech-stack">
           <span class="tech-badge"><i class="fab fa-html5"></i> HTML/CSS</span>
           <span class="tech-badge"><i class="fab fa-js"></i> JavaScript</span>
@@ -614,9 +618,9 @@
           <span class="tech-badge"><i class="fas fa-chart-line"></i> AI Reports</span>
         </div>
         <div class="insight-note">
-          <i class="fas fa-chart-pie gold"></i> <strong>Research outcomes:</strong> Reduces exam prep time by ~70% — generates 5+ report types: class performance heatmaps, topic-wise mastery, question difficulty analysis, and individual student feedback.
+          <i class="fas fa-chart-pie gold"></i> <strong>Research outcomes:</strong> Reduces exam marking time by ~70% — generates reports types: class performance , topic-wise mastery, question difficulty analysis, and individual student reports.
         </div>
-        <p class="project-desc" style="margin-top: 0.8rem;"><i class="fas fa-robot gold"></i> Integrates with Firebase Auth and Firestore. Teachers can customize subjects, grade levels, and export reports in PDF/CSV. Beta testing in Nairobi schools ongoing.</p>
+        <p class="project-desc" style="margin-top: 0.8rem;"><i class="fas fa-robot gold"></i> Integrates with Firebase Auth and Firestore. Teachers can print, and export reports in PDF after marking in bulk. Beta testing  ongoing.</p>
       </div>
     </div>
 
@@ -624,7 +628,7 @@
     <div style="margin-top: 2rem; background: linear-gradient(135deg, #0a0a0a, #000000); border-radius: 28px; padding: 1.2rem 1.8rem; border: 1px solid rgba(212, 175, 55, 0.4);">
       <div style="display: flex; gap: 1.2rem; flex-wrap: wrap; align-items: center; justify-content: space-between;">
         <div><i class="fas fa-flask gold" style="font-size: 1.8rem;"></i></div>
-        <div style="flex:1"><strong style="color:#D4AF37;">IntelliGas</strong> — under MKU Innovations Club <span style="color:#aaa;">|</span> <strong style="color:#D4AF37;">MarkBent AI</strong> — AI for education research collaboration</div>
+        <div style="flex:1"><strong style="color:#D4AF37;">IntelliGas</strong> under MKU Innovations Hub <span style="color:#aaa;">|</span> <strong style="color:#D4AF37;">MarkBench AI</strong>  Ed-Tech Solution for school exams</div>
         <div><span class="gold"><i class="fas fa-microphone-alt"></i> Seeking industry partners & testbeds</span></div>
       </div>
     </div>
